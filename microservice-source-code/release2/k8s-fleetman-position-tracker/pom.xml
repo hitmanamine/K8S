@@ -15,9 +15,14 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>17</java.version>
-	</properties>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <java.version>17</java.version>
+                <sonar.java.binaries>target/classes</sonar.java.binaries>
+    <sonar.projectKey>positiontracker</sonar.projectKey>
+    <sonar.projectName>Projetk8s</sonar.projectName>
+    <sonar.login>admin</sonar.login>
+    <sonar.password>TuHosny2421178</sonar.password>
+        </properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
