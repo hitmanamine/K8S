@@ -12,14 +12,7 @@ pipeline {
                 }
             }
         }
-        stage('Code Quality') {
-            steps {
-                script {
-                    // Run SonarQube analysis
-                    sh 'mvn sonar:sonar -Dsonar.projectKey=your_project_key -Dsonar.host.url=http://localhost:9000 -Dsonar.login=your_sonarqube_token'
-                }
-            }
-        }
+        
         stage('Build') {
             steps {
                 echo 'Building....'
@@ -36,6 +29,15 @@ pipeline {
                 sh 'kubectl apply -f .'
                 sh 'kubectl get all'
                 echo 'deployment complete'
+            }
+        }
+
+        stage('Code Quality') {
+            steps {
+                script {
+                    // Run SonarQube analysis
+                    sh 'mvn sonar:sonar -Dsonar.projectKey=your_project_key -Dsonar.host.url=http://localhost:9000 -Dsonar.login=your_sonarqube_token'
+                }
             }
         }
     }
